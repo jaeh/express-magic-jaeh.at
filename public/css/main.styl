@@ -1,37 +1,83 @@
 @import reset
+@import mixins
+
+@font-face
+  font-family 'Ubuntu'
+  font-style normal
+  font-weight 400
+  src local('Ubuntu'), url(/font/ubuntu-monospace-ext.woff2) format('woff2')
+  unicode-range U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF
+
+@font-face
+  font-family 'Ubuntu'
+  font-style normal
+  font-weight 400
+  src local('Ubuntu'), url(/font/ubuntu-monospace.woff2) format('woff2')
+  unicode-range U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
 
 body_color = #fefefe
 body_bg_color = #010101
-a_color = #999
-a_color_hover = #fff
+a_color = #F79F3F
 
 body
-  font-family monospace
+  font-family Ubuntu, monospace
   font-size 20px
+  line-height 1.3em
   max-width 700px
   margin 0 auto
-  padding 0.5em 1em
+  padding .5em 1em
   background-color body_bg_color
   color body_color
+
+  &.white
+    background-color body_color
+    color body_bg_color
+    
+    a
+      color darken(a_color, 20%)
+      &:hover
+        color lighten(a_color, 30%)
+
+h1, h2, h3, h4, h5
+  color a_color
 
 a
   color a_color
   text-decoration none
 
   &:hover
-    color a_color_hover
+    color lighten(a_color, 30%)
+
+h1, h2, h3, h4, h5
+  margin 1em 0 0
+
+h1 
+  font-size 1.5em
+  margin 1.5em 0 .5em
+h2
+  font-size 1.4em
+  margin 1.5em 0 .5em
+h3
+  font-size 1.3em
+h4
+  font-size 1.2em
+h5
+  font-size 1.1em
+
+p
+  margin .2em 0
 
 header.main
-  width 100%
-  margin 0 0 0.5em
   display inline-block
+  margin 0 0 .5em
+  width 100%
 
-  img.image
-    width 30%
+  img[itemprop=image]
+    border-radius 100%
     float left
     margin 0 3% 0 0
     max-width 100%;
-    border-radius 100%
+    width 30%
 
   h1,
   div
@@ -40,56 +86,80 @@ header.main
 
   h1
     font-size 1.5em
-    margin 0.5em 0
+    margin .5em 0
+
   div.jobTitle
     font-size .9em
-    margin 0 0 0.5em
-  div.description
-    font-size .8em
+    margin 0 0 .5em
 
+div.description
+  font-size .8em
 
-section.author
-  width 94%
+section[itemprop=author]
   margin 0 auto
   max-width 1000px
+  width 94%
 
-  div.affiliations
+div.list
+  display inline-block
+
+  li
     display inline-block
+    margin 1em 0
 
-    li
-      margin 1em 0
-      display inline-block
+    h5
+      margin 0 0 .5em
+      width 100%
 
       a
-        float left
-        display inline-block
-        margin 0 3% 0 0
+        img
+          display inline
+          float left
+          margin 0 3% 0 0
 
+    .content
+      float left
       img
-        max-height 60px
+        float left
+        margin 0 3% 0 0
         max-width 60px
 
-      div.description
-        display inline
-        font-size .8em
+    div[itemprop=description]
+      display inline
+      font-size .8em
 
-  div.emails, div.social
-    margin 1em 0
+.disclaimer
+  font-size .7em
+
+div.social
+  li
+    margin 0 1% 1%
+    width 12%
+    
+    img
+      width 100%
+
+  div.emails, div.networks
     float left
+    margin 1em 0
 
-  div.emails
-    width 35%
+div.emails
+  width 35%
 
-    a
-      line-height 1.4
+  li
+    display block
 
-  div.social
-    width 65%
+  a
+    line-height 1.4
 
-    header
-      display block
-      clear both
-      margin 0 0 0.1em
+div.networks
+  text-align right
+  width 65%
+
+  header
+    clear both
+    display block
+    margin 0 0 .1em
 
     li
       display inline
@@ -97,16 +167,85 @@ section.author
       img
         width 12%
         margin 0 1%
-        opacity 0.8
+        opacity .8
         &:hover
           opacity 1
 
 footer.main
   margin 1em 0
 
+
+pre.highlight
+  border-left 11px solid lighten(body_bg_color, 20%)
+  margin 1.7em 0 1.7em .3em
+  overflow auto
+  padding .1em .5em .3em .7em
+  width 93%
+  background-color body_color
+
+  code 
+    font-size .8em
+    line-height 1.6em
+
+body.white pre 
+  border-color lighten(body_bg_color, 20%)
+  color lighten(body_bg_color, 40%)
+
+code, samp, kbd
+  color lighten(body_bg_color, 20%)
+  font-family "Courier New", Courier, monospace, sans-serif
+  text-align left
+
+.dirview
+  ul
+    ul
+      margin 0 1em
+
+
+.testimonial
+  background-color #ff9d1c
+  border-radius 9px
+  box-shadow 2px 3px 10px #999
+  color #fff
+  font-size .8em
+  margin 1em auto
+  padding .5em
+  text-align center
+  width 80%
+
+  p
+    font-size .7em
+    font-style italic
+    text-align right
+    line-height 1.3em
+    margin 0
+
+.noselect
+  user-select(none)
+
+footer.main
+  display inline-block
+  margin 0
+  width 100%
+  text-align center
+  font-size .7em
+
+  nav ul li
+    display inline
+    padding 0 .5em
+    border-right 1px solid a_color
+    &:first-child
+      border-left 1px solid a_color
+
 @media (max-width: 800px)
   body
     font-size 18px
+  section.author
+    div.affiliations 
+      li 
+        header,
+        .content
+          width 100%
 
 @media (max-width: 600px)
   body
@@ -118,43 +257,32 @@ footer.main
 
   header.main
     div.description
-      max-width 100%
       margin 1em 0
+      max-width 100%
   section.author
     div.email,
-    div.social
+    div.networks
       width 100%
 
 @media (max-width: 420px)
   body
-    font-size 17px
+    font-size 15px
+  
+  header.main
+
+    img[itemprop=image]
+      width 100%
 
   section.author
-    div.social
+    div.networks
+      clear both
+      margin 0 0 1em
       max-width 100%
       width 100%
-      margin 0 0 1em
-      clear both
 
       header
-        margin 1em 0 0.1em
+        margin 1em 0 .1em
     h2
       display inherit
       width 65%
 
-  header.main
-    text-align center
-
-    img.image, h1, div
-      max-width 100%
-      width 100%
-      text-align center
-      float none
-      clear both
-
-    nav
-      ul
-        li
-          display block
-          text-align center
-          margin 0 0 0.5em

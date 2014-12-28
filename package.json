@@ -1,16 +1,6 @@
 {
-  "name"   : "magic-jaeh.at",
+  "name"   : "jaeh.at",
   "version": "0.0.1",
   "private": true,
-  "main"   : "./H.js",
-  "config" : {
-    "hosts"  : {
-      "development": [
-        "jaeh.test"
-      ],
-      "production": [
-        "jaeh.at"
-      ]
-    }
-  }
+  "main"   : "./H.js"
 }
