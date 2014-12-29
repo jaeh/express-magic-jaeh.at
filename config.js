@@ -7,7 +7,7 @@ module.exports = {
       'jaeh.at'
     ]
   , staging: [
-      'staging.jaeh.at'
+      'jaeh.at'
     ]
   }
 };
