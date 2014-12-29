@@ -270,11 +270,11 @@ footer.main
     text-align center
   
   header.main
+    h1,
+    div,
     img[itemprop=image]
       width 100%
-    h1,
-    div
-      max-width 100%
+
   div.list
     li
       .content
@@ -282,6 +282,9 @@ footer.main
           max-width 100%
           width 30%
           float none
+      div[itemprop=description]
+        display block
+
   div.emails
     width 100%
     float none
@@ -291,7 +294,10 @@ footer.main
       padding 0 4% 0
       
       &:first-child
-        border-left 1px solid a_color
+        border-right 1px solid a_color
+
+  div.networks
+    text-align center
 
   section.author
     div.networks
