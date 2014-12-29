@@ -1,6 +1,13 @@
 extends ../layout
 
 block content
-  header.main.error404
-    h2 Four Oh Four. Not found.
-    div.content This should not have happened.
+  section.error404
+    header.main
+      h2 Four Oh Four. Not found.
+
+    div.content
+      img(src='/img/404.png')
+      | This should not have happened.
+      | You can try the 
+      a(href='/') home page
+      |  to see if it helps you.
