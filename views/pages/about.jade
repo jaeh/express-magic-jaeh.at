@@ -4,7 +4,7 @@ block content
   section.about
     header
       h2 Hosts && Magic && A Wizard
-    
+
     h3 Who is it for?
     p
       | Magic is not for the faint of heart.
@@ -45,7 +45,7 @@ block content
       p
         | A host is a collection of templates, designed to be served together.
         | One host is a completely independent express application and it can do
-        | anything express can do, but most of the time with reduced boilerplate.
+        | anything express can do, but most of the time while reducing boilerplate.
         
       p
         | a host consists of 5 lines of javascript, because i like to be verbose:
@@ -65,23 +65,33 @@ block content
             module.exports = require('express')();
       p
         | The rest of the magic is completely up to you,
-        | you can add any kind of express functionality in your hosts.
-        | the following directory structure is supported by default.
-        pre.highlight
-          code.
-            -- app root dir
-            host.js       //the file described above
-            config.js     //the express-magic config file
-            views         //the top level view directory
-              layout.jade //the main layout file
-              pages       //this dir keeps the top level pages
-                index.jade
-                404.jade  //default magic 404 page template.
-            public        //a regular express.static public directory
+        | you can add any kind of express functionality in your hosts,
+        |  install a database, or any other npm module.
+
+      h3 directory structure
+      pre.highlight
+        code.
+          app.js            //contains require('express-magic')();
+          config.js         //holds global and default config
+          -- app root dir
+          hosts/
+            hostname/
+              host.js       //the file described above
+              config.js     //the express-magic config file
+              views/         //the top level view directory
+                layout.jade //the main layout file
+                pages       //this dir keeps the top level pages
+                  index.jade
+                  404.jade  //default magic 404 page template.
+              public/        //express.static public directory
+                css/
+                js/
+                font/
+                img/
       p
         | You can also look at the 
-        a(href='https://github.com/express-magic/magic-localhost' target='_blank') magic-localhost
-        |  repository. This is the express example application ready for express-magic
+        a(href='https://github.com/express-magic/magic-server' target='_blank') magic-server
+        |  repository. This is the example application ready for express-magic.
 
     article
       header
@@ -103,28 +113,27 @@ block content
     article
       header
         h4 Wizard
-      
+
       p
         | The wizard is there to help you add hosts, deploy, push to git and more.
         | It is designed to be used as a command line interface,
         | but will also be part of the admin package 
         | which will provide full in page cms functionality.
-    
 
     article
       header
         h4 Server
-      
+
       p
         | The 
         a(href='https://github.com/express-magic/magic-server' target='_blank') magic-server 
         | repository helps you kickstart your development.
         | Just add your custom content and deploy :)
-    
+
     article
       header
         h4 jascha.herokuapp.com
-      
+
       p
         | The application powering this page can be found at 
         a(href='https://github.com/jaeh/jascha.herokuapp.com' target='_blank') github
