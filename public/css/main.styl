@@ -21,23 +21,30 @@ a_color = #F79F3F
 
 html,
 body
-  display block
-  height 100%
-  width 100%
+  display inline-block
 
 body
+  background-color body_bg_color
   font-family Ubuntu, monospace
-  font-size 20px
+  font-size 18px
+  height 100%
   line-height 1.3em
-  max-width 700px
   margin 0 auto
   padding .5em 1em
-  background-color body_bg_color
-  color body_color
+  transition(background-color 0.5s)
+  width 100%
 
-  &.white
+  #wrapper
+    color body_color
+    margin 0 auto
+    max-width 900px
+    transition(color 0.5s)
+
+  &.day
     background-color body_color
-    color body_bg_color
+
+    #wrapper
+      color body_bg_color
     
     a
       color darken(a_color, 20%)
@@ -87,7 +94,7 @@ header.main
   h1,
   div
     float left
-    max-width 57%
+    width 57%
 
   h1
     font-size 1.5em
@@ -116,6 +123,7 @@ div.list
   li
     display inline-block
     margin 1em 0
+    width 100%
 
     h5
       margin 0 0 .5em
@@ -192,19 +200,25 @@ pre.highlight
   padding .1em .5em .3em .7em
   width 93%
   background-color body_color
+  transition(background-color 0.5s)
+  text-align left
 
   code 
     font-size .8em
     line-height 1.6em
 
-body.white pre 
-  border-color lighten(body_bg_color, 20%)
-  color lighten(body_bg_color, 40%)
+body.day
+  pre.highlight
+    border-color lighten(body_bg_color, 20%)
+    background-color body_bg_color
+    code
+      color body_color
 
 code, samp, kbd
   color lighten(body_bg_color, 20%)
   font-family "Courier New", Courier, monospace, sans-serif
   text-align left
+  transition(color 0.5s)
 
 .dirview
   ul
@@ -329,3 +343,11 @@ footer.main
       max-width 100%
       width 100%
 
+#daynight-container
+  display inline-block
+  position absolute
+  top 0.5em
+  right 0.5em
+  
+  a
+    cursor pointer
