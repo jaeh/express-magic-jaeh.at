@@ -1,9 +1,18 @@
+user-select(setTo)
+  -webkit-user-select setTo
+  -moz-user-select setTo
+  user-select setTo
+
+body
+  user-select(none)
+
 div#pgp
   display block
   font-family monospace
   white-space pre
+  user-select(initial)
 
-for row, i in (1.15em 2.3em 3.45em 4.6em 5.75em 6.9em 8.05em 8em 9em 10em 11em 12em 13em 14em 15em 16em 17em 18em 19em 20em)
+for row, i in (1.15em 2.35em 3.5em 4.65em 5.85em 7em 8.15em 9.35em 10.5em 11.65em 12.85em 14em 15.15em 16.35em 17.5em 18.65em 19.85em 21em 22.15em 23.35em)
   #l{i}
     top row
 
