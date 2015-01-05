@@ -22,30 +22,44 @@ a_color = #F79F3F
 html,
 body
   display inline-block
+  min-height 100%
+  left 0
+  position absolute
+  top 0
+  width 100%
 
 body
   background-color body_bg_color
   font-family Ubuntu, monospace
   font-size 18px
-  height 100%
   line-height 1.3em
-  margin 0 auto
   padding .5em 1em
   transition(background-color 0.5s)
-  width 100%
 
   #wrapper
     color body_color
-    margin 0 auto
+    margin 0 auto 3em
     max-width 900px
     transition(color 0.5s)
+      
+    section
+      display inline-block
+
+    .post
+      float left
+    aside
+      float right
 
   &.day
     background-color body_color
-
+    
+    pre.highlight
+      border-color lighten(body_bg_color, 20%)
+      background-color body_bg_color
+      code
+        color body_color
     #wrapper
       color body_bg_color
-    
     a
       color darken(a_color, 20%)
       &:hover
@@ -207,13 +221,6 @@ pre.highlight
     font-size .8em
     line-height 1.6em
 
-body.day
-  pre.highlight
-    border-color lighten(body_bg_color, 20%)
-    background-color body_bg_color
-    code
-      color body_color
-
 code, samp, kbd
   color lighten(body_bg_color, 20%)
   font-family "Courier New", Courier, monospace, sans-serif
@@ -248,16 +255,20 @@ code, samp, kbd
   user-select(none)
 
 footer.main
+  bottom 0
   display inline-block
-  margin 0
-  width 100%
-  text-align center
   font-size .7em
+  left 0
+  margin 0
+  position absolute
+  text-align center
+  top auto
+  width 100%
 
   nav ul li
+    border-right 1px solid a_color
     display inline
     padding 0 .5em
-    border-right 1px solid a_color
     &:first-child
       border-left 1px solid a_color
 
