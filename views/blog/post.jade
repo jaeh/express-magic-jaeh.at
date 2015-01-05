@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+  include ../pages/inc/bio
+  div.post!= post
+
+block aside
+  aside.blog
+    div.year
+      h2 Posts by Year
+      ul.list
+        li
+          a(href='/blog/2014/') 2014
+        ul.list
+          li
+            a(href='/blog/2014/12/') 12
+    div.categories
+      h2 Categories
+      ul.list
+        li
+          a(href='/category/category1/') category 1
+        li
+          a(href='/category/category2/') category 2
+
+    div.tags
+      h2 tags
+      ul.list
+        li
+          a(href='/tag/tag1/') tag 1
+        li
+          a(href='/tag/tag2/') tag 2
