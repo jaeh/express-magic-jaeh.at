@@ -2,26 +2,27 @@ extends ../layout
 
 block content
   section.about
-    header
-      h2 Hosts && Magic && A Wizard
+    article#about
+      header
+        h2 Hosts && Magic && A Wizard
 
-    h3 Who is it for?
-    p
-      | Magic is not for the faint of heart.
-      | It is built by programmers for programmers.
+      h3 Who is it for?
+      p
+        | Magic is not for the faint of heart.
+        | It is built by programmers for programmers.
 
-    p
-      | This page was built with the help of 
-      a(href='https://github.com/express-magic/express-magic' target='_blank') magic
-    
-    p
-      | What you see running here is a bunch of jade templates, hosted on 
-      a(href='https://heroku.com' target='heroku') heroku
-      | , content delivered through 
-      a(href='https://cloudflare.com' target='cloudflare') cloudflare
-      | .
+      p
+        | This page was built with the help of 
+        a(href='https://github.com/express-magic/express-magic' target='_blank') magic
+      
+      p
+        | What you see running here is a bunch of jade templates, hosted on 
+        a(href='https://heroku.com' target='heroku') heroku
+        | , content delivered through 
+        a(href='https://cloudflare.com' target='cloudflare') cloudflare
+        | .
 
-     article
+    article#magic
       header
         h4 Magic
       
@@ -39,7 +40,7 @@ block content
           code.
             require('express-magic')();
 
-    article
+    article#hosts
       header
         h4 Hosts:
       p
@@ -68,32 +69,7 @@ block content
         | you can add any kind of express functionality in your hosts,
         |  install a database, or any other npm module.
 
-      h3 directory structure
-      pre.highlight
-        code.
-          app.js            //contains require('express-magic')();
-          config.js         //holds global and default config
-          -- app root dir
-          hosts/
-            hostname/
-              host.js       //the file described above
-              config.js     //the express-magic config file
-              views/         //the top level view directory
-                layout.jade //the main layout file
-                pages       //this dir keeps the top level pages
-                  index.jade
-                  404.jade  //default magic 404 page template.
-              public/        //express.static public directory
-                css/
-                js/
-                font/
-                img/
-      p
-        | You can also look at the 
-        a(href='https://github.com/express-magic/magic-server' target='_blank') magic-server
-        |  repository. This is the example application ready for express-magic.
-
-    article
+    article#middleware
       header
         h4 Express Middlewares
       p
@@ -110,17 +86,22 @@ block content
         a(href='https://github.com/express-magic/express-magic/issues') issue
         |  on github and we will add it.
 
-    article
+    article#docker
       header
-        h4 Wizard
-
+        h4 Docker
       p
-        | The wizard is there to help you add hosts, deploy, push to git and more.
-        | It is designed to be used as a command line interface,
-        | but will also be part of the admin package 
-        | which will provide full in page cms functionality.
+        | we use docker in development and deployment.
+      p
+        | This also means that starting is really easy, especially on ubuntu:
 
-    article
+      pre.highlight
+        code.
+          git clone https://github.com/express-magic/magic-server
+          cd magic-server
+          make install #installs docker on ubuntu
+          make #builds the three docker images needed
+
+    article#server
       header
         h4 Server
 
@@ -128,9 +109,121 @@ block content
         | The 
         a(href='https://github.com/express-magic/magic-server' target='_blank') magic-server 
         | repository helps you kickstart your development.
-        | Just add your custom content and deploy :)
+        | It comes with all the Makefiles, Dockerfiles and what not you need 
+        | to instantly start working on your own content.
+        | just go into the hosts directory, change the Makefile to 
+        | git clone your custom host directories or clone and use 
+        | the localhost directory that is already contained.
 
-    article
+    article#makefile
+      header
+        h4 Makefile
+    
+      p
+        | There are multiple Makefiles and this Paragraphs will be used to list
+        | their Features. Work in Progress.
+
+
+      h4 Root Makefile
+      pre.highlight
+        code.
+          all the following commands can be called using
+          make 'command'
+
+          base: build the base image
+          basef: build the base image with --no-cache
+
+          build: build the magic-server image
+          buildf: build the magic-server image with --no-cache
+
+          hosts: build the ./hosts/Dockerfile
+            accepts parameter:
+            make hosts env='development' will start the dev env
+
+          dev: shorthand for make hosts env='development'
+          devf: dev with --no-cache
+
+          run: the docker instance
+            accepts parameters:
+              xport:   external port
+              iport:   internal port
+              name:    docker name
+              hosttag: docker tag
+
+          kill: kill the docker container
+
+          restart [alias= re]: kill then run
+
+          logs: outputs the docker logs of the running process
+
+          rmContainers: docker rm all docker containers
+
+          rmImages: docker rmi - delete all docker images
+
+          install #apt-get update && apt-get install docker
+
+          update #updates the main repository using git pull
+
+          rebuild: base build dev restart
+          rebuildf: basef buildf dev restart
+          all: rebuild
+      
+      h4 Hosts Makefile
+      p This File needs to be manually updated whenever you add a host.
+
+      pre.highlight
+        code.
+          install: git clone
+          update:  update the hosts using git pull
+          rm:      delete the hosts
+          status:  get the git status for all hosts
+
+    //-
+      article#wizard
+        header
+          h4 
+            s Wizard
+
+        p.error
+          | currently not working! 
+          | The Wizard does a lot of what now Docker does.
+
+        p
+          | The wizard is there to help you add hosts, deploy, push to git and more.
+          | It is designed to be used as a command line interface,
+          | but will also be part of the admin package 
+          | which will provide full in page cms functionality.
+
+    article#directory-structure
+      header
+        h4 directory structure
+      pre.highlight
+        code.
+          Makefile          //main control interface, see blow
+          dockerbase/
+            Dockerfile      //this Dockerfile builds the base docker image
+          server/
+            app.js            //contains require('express-magic')();
+            config.js         //holds global and default config
+            Dockerfile      //this Dockerfile builds the magic-server
+          hosts/
+            Dockerfile.tmpl //exposes port 80 and starts the magic
+            Makefile        //host install, update, remove and (git) status
+            hostname/
+              host.js       //the file described above
+              config.js     //the express-magic config file
+              views/         //the top level view directory
+                layout.jade //the main layout file
+                pages       //this dir keeps the top level pages
+                  index.jade
+                  404.jade  //default magic 404 page template.
+              public/        //express.static public directory
+                css/
+                js/
+                font/
+                img/
+
+    article#jaeh-github
       header
         h4 jaeh.at github
       p
