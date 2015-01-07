@@ -7,20 +7,18 @@ block content
         h2 Hosts && Magic && A Wizard
 
       h3 Who is it for?
+      
+      p
+        | This page was built with the help of 
+        a(href='https://github.com/express-magic/express-magic' target='_blank') Magic
+
       p
         | Magic is not for the faint of heart.
         | It is built by programmers for programmers.
 
       p
-        | This page was built with the help of 
-        a(href='https://github.com/express-magic/express-magic' target='_blank') magic
-      
-      p
-        | What you see running here is a bunch of jade templates, hosted on 
-        a(href='https://heroku.com' target='heroku') heroku
-        | , content delivered through 
-        a(href='https://cloudflare.com' target='cloudflare') cloudflare
-        | .
+        | What you see running here is a bunch of jade templates, stylus css 
+        | and browserified javascript, tunneled through express.
 
     article#magic
       header
@@ -49,15 +47,15 @@ block content
         | anything express can do, but most of the time while reducing boilerplate.
         
       p
-        | a host consists of 5 lines of javascript, because i like to be verbose:
+        | a host consists of 5 lines of javascript, 
+        | because we like to be verbose:
         pre.highlight
           code.
             'use strict';
             var express = require('express')
               , H = express()
             ;
-            //custom functionality, 
-            //load express modules, use them, add routes etc.
+            //custom functionality
             module.exports = H;
       p
         | of course you can be less verbose too:
@@ -65,9 +63,9 @@ block content
           code.
             module.exports = require('express')();
       p
-        | The rest of the magic is completely up to you,
-        | you can add any kind of express functionality in your hosts,
-        |  install a database, or any other npm module.
+        | The rest of the magic is completely up to you, 
+        | you can add any kind of express functionality in your hosts, 
+        | install a database, or any other npm module.
 
     article#middleware
       header
@@ -77,14 +75,31 @@ block content
         pre.highlight
           code.
             var H = require('express')();
+
             H.enable('bodyParser');
             H.enable('cookieParser');
+
+            //using config variables, showing default settings:
+            H.set('publicDir', 'public');
+            H.set('viewsDir', 'views');
+            H.set('blogRoot', 'blog');
+            H.set('view engine', 'jade')
+            
+            //need an express.Router?
+            var router = express.Router();
+            router.get('*', function(req, res, next) {
+              console.log('router.get called');
+              next();
+            });
+            S.set('router', router); //note we do not .use the router!
+            
             //there are more, documentation will follow.
 
         | If you use magic-express and find a middleware that is not supported
         | just file an 
         a(href='https://github.com/express-magic/express-magic/issues') issue
-        |  on github and we will add it.
+        |  on github and we will add it, the goal here is to get a broad level 
+        | of support for the most used express middlewares.
 
     article#docker
       header
@@ -99,7 +114,7 @@ block content
           git clone https://github.com/express-magic/magic-server
           cd magic-server
           make install #installs docker on ubuntu
-          make #builds the three docker images needed
+          make all     #builds the three docker images needed
 
     article#server
       header
@@ -178,22 +193,6 @@ block content
           rm:      delete the hosts
           status:  get the git status for all hosts
 
-    //-
-      article#wizard
-        header
-          h4 
-            s Wizard
-
-        p.error
-          | currently not working! 
-          | The Wizard does a lot of what now Docker does.
-
-        p
-          | The wizard is there to help you add hosts, deploy, push to git and more.
-          | It is designed to be used as a command line interface,
-          | but will also be part of the admin package 
-          | which will provide full in page cms functionality.
-
     article#directory-structure
       header
         h4 directory structure
@@ -228,4 +227,4 @@ block content
         h4 jaeh.at github
       p
         | The magic-host powering this page can be found at 
-        a(href='https://github.com/jaeh/jaeh.at' target='_blank') my github account.
+        a(href='https://github.com/jaeh/jaeh.at' target='_blank') github.
