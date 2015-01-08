@@ -16,20 +16,17 @@ html(lang='en' itemscope itemtype='http://schema.org/ProfilePage')
     block styles
 
   body.day
+    header.main
+      include ./menu
+  
     #wrapper
       block content
         div.content empty body content
       block aside
 
     footer.main
-      nav
-        ul
-          li
-            a(href='/') home
-          li
-            a(href='/about') about this page
-          li
-            a(href='http://suppe.jaeh.at') soup
-      block scripts
+      include ./menu
 
-      script#load-js(src='/js/load.js')
+    block scripts
+
+    script#load-js(src='/js/load.js')

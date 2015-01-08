@@ -34,13 +34,13 @@ body
   font-size 18px
   line-height 1.3em
   padding .5em 1em
-  transition(background-color 0.5s)
+  transition(background-color .5s)
 
   #wrapper
     color body_color
     margin 0 auto 3em
     max-width 900px
-    transition(color 0.5s)
+    transition(color .5s)
       
     section
       display inline-block
@@ -94,9 +94,9 @@ h5
 p
   margin .2em 0
 
-header.main
+header.content
   display inline-block
-  margin 0 0 .5em
+  margin 3em 0 .5em
   width 100%
 
   img[itemprop=image]
@@ -203,8 +203,6 @@ div.networks
         &:hover
           opacity 1
 
-footer.main
-  margin 1em 0
 
 
 pre.highlight
@@ -214,7 +212,7 @@ pre.highlight
   padding .1em .5em .3em .7em
   width 93%
   background-color body_color
-  transition(background-color 0.5s)
+  transition(background-color .5s)
   text-align left
 
   code 
@@ -225,7 +223,7 @@ code, samp, kbd
   color lighten(body_bg_color, 20%)
   font-family "Courier New", Courier, monospace, sans-serif
   text-align left
-  transition(color 0.5s)
+  transition(color .5s)
 
 .dirview
   ul
@@ -256,13 +254,19 @@ code, samp, kbd
 
 footer.main
   bottom 0
+  top auto
+
+header.main
+  top 0
+
+footer.main,
+header.main
   display inline-block
-  font-size .7em
+  font-size .8em
   left 0
   margin 0
   position absolute
   text-align center
-  top auto
   width 100%
 
   nav ul li
@@ -290,7 +294,7 @@ footer.main
   body
     font-size 15px
 
-  header.main
+  header.content
     div.description
       margin 1em 0
 
@@ -304,7 +308,7 @@ footer.main
     font-size 15px
     text-align center
   
-  header.main
+  header.content
     h1,
     div,
     div.description,
@@ -357,8 +361,9 @@ footer.main
 #daynight-container
   display inline-block
   position absolute
-  top 0.5em
-  right 1em
+  top 0
+  right .5em
+  font-size .8em
   
   a
     cursor pointer
