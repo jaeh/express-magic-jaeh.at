@@ -99,11 +99,26 @@ header.content
   margin 3em 0 .5em
   width 100%
 
-  img[itemprop=image]
-    border-radius 100%
+  div.image-container
     float left
-    margin 0 3% 0 0
     max-width 40%
+    min-width 30%
+    position relative
+    margin 0 3% 0 0
+
+    img[itemprop=image]
+      border-radius 100%
+      float left
+      width 100%
+
+      &.white
+        opacity 0
+        transition opacity 0.8s
+        position absolute
+        left 0
+      
+        &:hover
+          opacity 1
 
   h1,
   div
