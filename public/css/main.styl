@@ -1,4 +1,5 @@
 @import mixins
+@import daynight
 global-reset()
 
 @font-face
@@ -323,6 +324,14 @@ header.main
   body
     font-size 16px
 
+    header.content
+      h1,
+      div
+        width 45%
+      div.image-container
+        max-width 300px
+        width 50%
+
 @media (max-width: 500px)
   body
     font-size 15px
@@ -340,71 +349,61 @@ header.main
   body
     font-size 15px
     text-align center
-  
-  header.content
-    h1,
-    div,
-    div.description,
-    img[itemprop=image],
-    div.image-container
+    
+    header.content
+      h1,
+      div,
+      div.description,
+      img[itemprop=image],
+      div.image-container
+        width 100%
+        max-width 100%
+
+    div.list
+      li
+        .content
+          img
+            max-width 100%
+            width 30%
+            float none
+        div[itemprop=description]
+          display block
+
+    div.networks
+      ul
+        text-align center
+
+        li
+          width 19%
+
+    div.emails
       width 100%
-      max-width 100%
+      float none
+      li
+        display inline
+        margin 0
+        padding 0 4% 0
+        
+        &:first-child
+          border-right 1px solid a_color
 
-  div.list
-    li
-      .content
-        img
-          max-width 100%
-          width 30%
-          float none
-      div[itemprop=description]
-        display block
-
-  div.networks
-    ul
+    div.networks
       text-align center
 
-      li
-        width 19%
+    section.author
+      div.networks
+        clear both
+        margin 0 0 1em
+        max-width 100%
+        width 100%
 
-  div.emails
-    width 100%
-    float none
-    li
-      display inline
-      margin 0
-      padding 0 4% 0
-      
-      &:first-child
-        border-right 1px solid a_color
+        header
+          margin 1em 0 .1em
+      h2
+        display inherit
+        width 65%
 
-  div.networks
-    text-align center
-
-  section.author
-    div.networks
-      clear both
-      margin 0 0 1em
-      max-width 100%
-      width 100%
-
-      header
-        margin 1em 0 .1em
-    h2
-      display inherit
-      width 65%
-
-  section.error404
-    img
-      max-width 100%
-      width 100%
-
-#daynight-container
-  display inline-block
-  position absolute
-  top 0
-  right .5em
-  font-size .8em
-  
-  a
-    cursor pointer
+    section.error404
+      img
+        max-width 100%
+        width 100%
