@@ -1,0 +1,17 @@
+ {
+    "version": "1.0",
+    "name": "Jascha Ehrenreich - Personal Homepage",
+    "description": "Magically Shifting Paradigms",
+    "icons": {
+      "128": "/img/jascha.ehrenreich.128.jpg"
+    },
+    "developer": {
+      "name": "Jascha Ehrenreich",
+      "url": "https://jaeh.at"
+    },
+    "installs_allowed_from": [
+      "https://jaeh.at",
+      "https://marketplace.mozilla.org"
+    ],
+    "default_locale": "en"
+  }
