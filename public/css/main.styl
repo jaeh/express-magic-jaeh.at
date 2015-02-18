@@ -1,6 +1,7 @@
 @import mixins
-@import daynight
 global-reset()
+
+@import daynight
 
 @font-face
   font-family 'Ubuntu'
@@ -35,8 +36,6 @@ figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video
   box-sizing border-box
-
-
 
 html,
 body
@@ -130,7 +129,7 @@ header.content
       float left
       width 100%
 
-      &.white
+      &.body
         opacity 0
         transition opacity 0.8s
         position absolute
@@ -309,6 +308,9 @@ header.main
     padding 0 .5em
     &:first-child
       border-left 1px solid a_color
+
+#je-suis-chelsea
+  text-align center
 
 @media (max-width: 800px)
   body
