@@ -1,11 +1,14 @@
 extends ../layout
 
-block title JE SUIS CHELSEA
+block title 
+  title JE SUIS CHELSEA
 
 block content
   div#je-suis-chelsea
       div.image
         img(src='/img/je-suis-chelsea.jpg' alt='JE SUIS CHELSEA')
+      div.link
+        a(href='/img/je-suis-chelsea.xcf') Click here to download the xcf source file
       div.license
         a(rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/")
           img(alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png")
@@ -16,3 +19,4 @@ block content
         |  is licensed under a 
         a(rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/") Creative Commons Attribution-ShareAlike 4.0 International License
         |.
+        | I do not care about attribution when you share this image in a non-commercial way.
