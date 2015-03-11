@@ -1,2 +1,4 @@
 'use strict';
-require('./dayNight');
+import DayNightUI from './dayNight';
+
+new DayNightUI();

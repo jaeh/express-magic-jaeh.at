@@ -1,7 +1,6 @@
 'use strict';
-var utils = {};
 
-utils.localStorage = function () {
+export function hasLocalStorage() {
   try {
       localStorage.setItem('itemtest235', 'mod');
       localStorage.removeItem('itemtest235');
@@ -10,5 +9,3 @@ utils.localStorage = function () {
       return false;
   }
 }
-
-module.exports = utils;
