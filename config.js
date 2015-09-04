@@ -23,11 +23,10 @@ var dirs = {
 var env = process.env.NODE_ENV || 'development';
 
 var menuItems = [
-  {href: '#♥', text: 'about', title:'What we are'},
-  {href: '#wizards', text: 'wizards', title: 'Who we are'},
-  {href: '#at', text: 'at', title: 'Where we are'},
-  {href: '#work', text: 'work', title: 'What we do'},
-  {href: '#contact', text: 'contact', title: 'How we communicate'},
+  {href: '#♥', text: 'about', title:'Who i am'},
+  {href: '#projects', text: 'projects', title: 'What i do'},
+  {href: '#networks', text: 'networks', title: 'My networks'},
+  {href: '#contact', text: 'contact', title: 'How you can reach me'},
 ];
 
 var server = {
@@ -42,7 +41,7 @@ var server = {
 };
 
 module.exports = {
-  CNAME: 'magicshifter.net',
+  CNAME: 'jaeh.at',
   port: 1337,
   pages: '/ /index.html',
   pageItems: {
@@ -119,86 +118,8 @@ module.exports = {
     env: env,
     menuItems: menuItems,
     dirs: server.dirs,
-    wizards: [
-      {
-        nick: 'wizard23',
-        slug: 'wizard23',
-        firstname: 'philipp',
-        lastname: 'tiefenbacher',
-        url: 'http://wizards23.net',
-        job: 'ceo',
-      },
-      {
-        nick: 'jascha',
-        slug: 'jascha',
-        firstname: 'jascha',
-        lastname: 'ehrenreich',
-        url: 'https://jaeh.at',
-        job: 'webdev',
-      },
-      {
-        nick: 'tompeak',
-        slug: 'tompeak',
-        firstname: 'tom',
-        lastname: 'peak',
-        url: 'http://tompeak.com',
-        job: 'webdev, gfx'
-      }
-    ],
-    at: [
-      {
-        name: 'metalab',
-        url: 'https://metalab.at',
-        img: 'metalab.png',
-      },
-      {
-        name: 'hackerspaceshop',
-        url: 'http://hackerspaceshop.com',
-        img: 'hackerspaceshop.png',
-      },
-      {
-        name: 'raumzeitlabor',
-        url: 'http://raumzeitlabor.de',
-        img: 'raumzeitlabor.png',
-      },
-    ],
-    work: [
-      {
-        name: 'magicshifter',
-        img: 'magicshifter.jpg',
-        url: 'http://magicshifter.net',
-        description: [
-          'lorem ipsum dolor sit amet',
-          'lorem ipsum dolor sit amet',
-          'lorem ipsum dolor sit amet',
-          'lorem ipsum dolor sit amet',
-        ],
-      },
-      {
-        name: 'evocell',
-        img: 'evocell.jpg',
-        url: 'https://wizard23.github.io/evocell/cellspace.html',
-        description: [
-          'lorem ipsum dolor sit amet',
-          'lorem ipsum dolor sit amet',
-          'lorem ipsum dolor sit amet',
-          'lorem ipsum dolor sit amet',
-        ],
-      },
-      {
-        name: 'printables',
-        img: 'printables.jpg',
-        url: 'http://www.thingiverse.com/wizard23/designs',
-        description: [
-          'lorem ipsum dolor sit amet',
-          'lorem ipsum dolor sit amet',
-          'lorem ipsum dolor sit amet',
-          'lorem ipsum dolor sit amet',
-        ],
-      },
-    ],
     contact: {
-      email: 'team@magicshifter.net',
-    },
-  },
+      email: 'jascha@jaeh.at',
+    }
+  }
 };
