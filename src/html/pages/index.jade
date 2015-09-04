@@ -1,0 +1,298 @@
+extends ../layout
+
+block title
+  title Jascha Ehrenreich, Magically Shifting Paradigms
+
+block content
+  section.author(itemprop='author' itemscope itemtype='http://schema.org/Person')
+
+    .affiliations.list(itemprop='affiliations')
+      h2(itemprop='contentType') Organizations
+      .disclaimer
+        | Groups i am proud to be a part of.
+      ul
+        li(
+          itemprop='memberOf'
+          itemscope 
+          itemtype='http://schema.org/Organization'
+        )
+          header
+            h5
+              a(
+                href='http://bwb.is'
+                target='bwb' 
+                itemprop='legalName'
+              ) Bitcoiners Without Borders
+          .content
+            a(
+              href='https://bwb.is'
+              target='bwb'
+              itemprop='url'
+            )
+              img(
+                itemprop='logo'
+                src='/img/bwb.png'
+                alt='Bitcoiners Without Borders'
+              )
+            .description(itemprop='description') 
+              | We are a tribe of individuals tired of the destructive trip,
+              | workin' on a better day.
+
+        li(
+          itemprop='memberOf'
+          itemscope
+          itemtype='http://schema.org/Organization'
+        )
+          header
+            h5
+              a(
+                href='https://metalab.at'
+                target='utopia'
+                itemprop='legalName'
+              ) Metalab
+
+          .content
+            a(
+              href='https://metalab.at'
+              target='utopia'
+              itemprop='url'
+            )
+              img(
+                itemprop='logo'
+                src='/img/metalab.png'
+                alt='metalab.at'
+              )
+            .description(
+              itemprop='description'
+            ) 
+              | The Metalab is 
+              s the
+              |  a 
+              a(
+                itemprop='url' 
+                href='http://hackerspaces.org/wiki/'
+              ) hackspace
+              |  in 
+              span(
+                itemprop='contactPoint'
+              ) Vienna, Austria.
+              |  Chances are high that i am sitting in the 
+              span Metalab lounge
+              |  at this moment, 
+              | which means that i am at the exact position of the orange dot you can see on  
+              a(
+                href='http://www.openstreetmap.org/node/254344537' 
+                target='utopia'
+                itemprop='contactPoint'
+              ) Openstreetmap
+
+
+
+    .projects.list
+      header 
+        h2(itemprop='contentType') Projects:
+      .disclaimer
+        | Those are some of the projects i worked on and want to endorse.
+      ul
+        li(
+          itemprop='brand'
+          itemscope
+          itemtype='http://schema.org/Product'
+        )
+          header
+            h5
+              a(
+                href='http://magicshifter.net'
+                target='_blank'
+                itemprop='legalName'
+              ) MagicShifter - the Open Source Magic Lamp!
+
+          .content
+            a(
+              href='http://magicshifter.net'
+              target='_blank'
+              itemprop='url'
+            )
+              img(
+                itemprop='image' 
+                src='/img/magicshifter-logo.png' 
+                alt='magicshifter.net'
+              )
+
+            .description(
+              itemprop='description' 
+              itemscope itemtype='http://schema.org/Organisation'
+            ) 
+              | An open source hardware gadget for lighting, gaming,
+              | and persistence of vision applications.
+              | Charge and reprogram it over usb!
+              | Get one of the limited first batch
+              span(itemprop='affiliate')
+                a(
+                  itemprop='url'
+                  target='hackerspaceshop'
+                  href='http://www.hackerspaceshop.com/magicshifter.html' 
+                ) 
+                  span(itemprop='legalName') @hackerspaceshop
+              
+              |.  The MagicShifter was created by 
+              a.person(
+                itemprop='colleague' 
+                href='https://metalab.at/wiki/Benutzer:Wizard23' 
+                target='wizard23'
+              ) Philipp Tiefenbacher
+              | .
+              .testimonial 
+                | Every sufficiently advanced technology is indistinguishable from a MagicShifter
+                p.author Arthur C. Clarke, Proud Owner
+
+        li(itemprop='brand' itemscope itemtype='http://schema.org/Product')
+          header
+            h5
+              a(
+                itemprop='legalName' 
+                href='https://github.com/metalab/screeninvader' 
+                target='utopia'
+              ) Screeninvader
+
+          .content
+            a(
+              itemprop='url' 
+              href='https://github.com/metalab/screeninvader' 
+              target='utopia' 
+            )
+              img(
+                itemprop='image' 
+                src='/img/screeninvader-logo.png' 
+                alt='Screeninvader'
+              )
+
+            .description(itemprop='description')
+              | Ever wished you could play media content from your device on any screen or projector in just an instant? This is what ScreenInvader helps you do. Most of the hard work was done by
+              |  
+              span(itemprop='colleague')
+                a.person(
+                  itemprop='url' 
+                  href='http://viel-zu.org' 
+                  target='kallaballa'
+                )
+                  span(itemprop='name') Amir Hassan
+
+                | . Check out his 
+                a(
+                  href='https://github.com/kallaballa?tab=repositories' 
+                  target='_blank'
+                ) github
+                |  to see a heap of his ingeniously crazy projects.
+
+
+  .social(itemprop='social')
+    .emails.list
+      header(itemprop='contentType') Emails:
+      ul
+        li(itemprop='contactPoint')
+          a(
+            itemprop='email'
+            href='mailto://jascha@jaeh.at'
+          ) jascha@jaeh.at
+
+        li(itemprop='contactPoint')
+          a(
+            itemprop='email'
+            href='mailto://jascha@bwb.is'
+          ) jascha@bwb.is
+
+    .networks.list
+      header(itemprop='contentType') Networks:
+      ul
+        li(itemprop='contactPoint')
+          a(
+            itemprop='url'
+            target='_blank'
+            href='https://github.com/jaeh'
+          )
+            img(
+              itemprop='logo'
+              src='/img/social/github.png'
+              alt='home of the octocat'
+              title='home of the octocat'
+            )
+
+        li(itemprop='contactPoint')
+          a(
+            itemprop='url'
+            target='_blank'
+            href='https://keybase.io/jascha'
+          )
+            img(
+              itemprop='logo'
+              src='/img/social/keybase.png'
+              alt='keybase.io'
+              title='my keybase.io profile'
+            )
+
+        li(itemprop='contactPoint')
+          a(
+            itemprop='url'
+            target='_blank'
+            href='https://twitter.com/weirdpress'
+          )
+            img(
+              itemprop='logo'
+              src='/img/social/twitter.png'
+              alt='twitter: @weirdpress'
+              title='my twitter account'
+            )
+
+        li(itemprop='contactPoint')
+          a(
+            itemprop='url'
+            target='_blank'
+            href='https://about.me/jascha.ehrenreich'
+          )
+            img(
+              itemprop='logo'
+              src='/img/social/aboutme.png'
+              alt='about.me'
+              title='my about.me page'
+            )
+
+        li(itemprop='contactPoint')
+          a(
+            itemprop='url'
+            target='_blank'
+            href='https://suppe.jaeh.at'
+          )
+            img(
+              itemprop='logo'
+              src='/img/social/soup.png'
+              alt='suppe. ja. eh.'
+              title='soup (german: die suppe) is a social blogging network.'
+            )
+
+        li(itemprop='contactPoint')
+          a(
+            itemprop='url'
+            target='_blank'
+            href='https://at.linkedin.com/in/jaschaehrenreich'
+          )
+            img(
+              itemprop='logo'
+              src='/img/social/linkedin.png'
+              alt='linkedin'
+              title='linkedin'
+            )
+
+        li(itemprop='contactPoint')
+          a(
+            itemprop='url'
+            target='_blank'
+            href='https://facebook.com/jascha.ehrenreich'
+          )
+            img(
+              itemprop='logo'
+              src='/img/social/facebook.png'
+              alt='facebook'
+              title='it is the kraken.'
+            )
+

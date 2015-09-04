@@ -1,0 +1,18 @@
+if title || date || author
+  header
+    if title
+      h1= title
+
+    if date 
+      div.date
+        span.label Published on: 
+        span.date= date
+
+    if author
+      div.author
+        span.label Written by 
+        if author.url
+          a(href=author.url)
+            span.author= author.name
+        else
+          span.author= author.name

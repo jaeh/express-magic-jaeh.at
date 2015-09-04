@@ -1,0 +1,26 @@
+{
+  "name": "jaeh.at",
+  "version": "0.0.1",
+  "description": "my personal homepage page, built using magic",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "production": "NODE_ENV='production' gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaeh/jaeh.at.git"
+  },
+  "author": "Jascha Ehrenreich <jascha@jaeh.at>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jaeh/jaeh.at/issues"
+  },
+  "homepage": "http://wizardsat.work",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "builder": "magic/builder",
+    "page": "^1.6.3",
+    "utils": "magic/utils"
+  }
+}
