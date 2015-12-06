@@ -1,8 +1,5 @@
 nav
   ul
-    li
-      a(href='/') home
-    li
-      a(href='/about') about this page
-    li
-      a(href='http://suppe.jaeh.at') soup
+    for item in menuItems
+      li
+        a(href=item.href title=item.title)= item.text
