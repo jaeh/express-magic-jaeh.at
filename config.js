@@ -26,9 +26,11 @@ var menuItems = [
   {href: '#♥', text: 'about', title:'Who i am'},
 //  {href: '#about', text: 'about this page', title: 'What i do'},
   {href: '#work', text: 'contact', title: 'How you can reach me'},
-  {href: '/blog', text: 'blog', title: 'My "blog"'},
   {href: '#contact', text: 'contact', title: 'How you can reach me'},
+  {href: '/blog', text: 'blog', title: 'My "blog"'},
 ];
+
+var emails = ["any-string@jaeh.at"];
 
 var server = {
   // Files to exclude from static serving,
@@ -121,6 +123,7 @@ module.exports = {
   locals: {
     env: env,
     menuItems: menuItems,
+    emails: emails,
     dirs: server.dirs,
     contact: {
       email: 'jascha@jaeh.at',
