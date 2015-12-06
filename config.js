@@ -1,7 +1,7 @@
 var join = require('path').join;
 
 var src = 'src';
-var build = 'build';
+var build = 'out';
 var appcache = 'manifest.appcache';
 
 var dirs = {
@@ -24,8 +24,9 @@ var env = process.env.NODE_ENV || 'development';
 
 var menuItems = [
   {href: '#♥', text: 'about', title:'Who i am'},
-  {href: '#projects', text: 'projects', title: 'What i do'},
-  {href: '#networks', text: 'networks', title: 'My networks'},
+//  {href: '#about', text: 'about this page', title: 'What i do'},
+  {href: '#work', text: 'contact', title: 'How you can reach me'},
+  {href: '/blog', text: 'blog', title: 'My "blog"'},
   {href: '#contact', text: 'contact', title: 'How you can reach me'},
 ];
 
@@ -47,6 +48,9 @@ module.exports = {
   pageItems: {
     '/': '/index.html',
     '/%E2%99%A5': '/index.html',
+    '/about': '/index.html',
+    '/work': '/index.html',
+    '/contact': '/index.html',
 
   },
   menuItems: menuItems,
