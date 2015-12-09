@@ -30,26 +30,20 @@ a,
   &:hover
     color $a-color-hover
 
-header.main
-  background-color $body-bg-color
-  border-bottom 1px solid $a-color
-  display block
-  position fixed
-  text-align center
-  width 100%
+.wrapper
+  margin 2em auto
+  width 600px
 
-  nav
-    ul
-      li
-        border-left 1px solid $a-color
-        display inline-block
-        padding .2em .5em
+h1
+  font-size 1.5em
+  line-height 1.5
 
-        &:last-child
-          border-right 1px solid $a-color
+h2
+  font-size 1.2em
+  line-height 1.5
 
-        a
-          text-decoration none
+div.contact
+  margin .5em 0 0
 
 section
   height 90vh
@@ -60,6 +54,7 @@ section
       display block
       float left
       height 200px
+      margin 0 2em 0 0
       position relative
       width 200px
 
@@ -83,6 +78,3 @@ section
           opacity 1
         &:last-child
           opacity 0
-
-.wrapper
-  margin 2em 0 0
