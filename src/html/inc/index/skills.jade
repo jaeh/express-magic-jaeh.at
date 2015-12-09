@@ -1,0 +1,150 @@
+-
+  var languages = [
+    {
+      name: "javascript",
+      level: "five",
+    },
+    {
+      name: "html",
+      level: "five",
+    },
+    {
+      name: "css",
+      level: "five",
+    },
+    {
+      name: "clojure(script)",
+      level: "two",
+    },
+    {
+      name: "python",
+      level: "two",
+    },
+    {
+      name: "c(++)",
+      level: "one",
+    },
+    {
+      name: "php",
+      level: "three",
+    },
+    {
+      name: "c# (unity3d)",
+      level: "three",
+    },
+    {
+      name: "actionscript 2 & 3",
+      level: "three",
+    },
+  ];
+
+  var tools = [
+    {
+      name: "game engines",
+      list: [
+        {
+          name: "blender (python)",
+          level: "three",
+        },
+        {
+          name: "unity3d",
+          level: "three",
+        },
+        {
+          name: "flash",
+          level: "three",
+        },
+      ],
+    },
+    {
+      name: "build tools",
+      list: [
+        {
+          name: "grunt",
+          level: "three",
+        },
+        {
+          name: "gulp",
+          level: "three",
+        },
+        {
+          name: "leiningen",
+          level: "two",
+        },
+        {
+          name: "composer",
+          level: "two",
+        },
+      ],
+    },
+    {
+      name: "frameworks / servers / databases",
+      list: [
+        {
+          name: "nodejs",
+          level: "four",
+        },
+        {
+          name: "expressjs",
+          level: "four",
+        },
+        {
+          name: "meteorjs",
+          level: "three",
+        },
+        {
+          name: "wordpress",
+          level: "four",
+        },
+        {
+          name: "nginx",
+          level: "three",
+        },
+        {
+          name: "mysql / mariadb / postgres",
+          level: "three",
+        },
+        {
+          name: "mongodb",
+          level: "three",
+        },
+
+      ]
+    },
+  ];
+
+
+if languages || tools
+  section#skills.list
+    h2 skills
+    .disclaimer
+      | programming languages and tools i successfully used in production
+      |  and a self-proclaimed level of proficiency in each of them:
+      p
+        | stars:
+        ul
+          li one: can barely use
+          li two: can use but am slow
+          li three: can use and am productive
+          li four: can work myself into a large project quickly
+          li five: really understand the tool and most of it's quirks
+
+    if languages
+      ul.languages
+        lh languages
+        for lang in languages
+          li
+           span= lang.name
+           span(class=lang.level)
+
+    if tools
+      ul.tools
+        lh tools:
+        for toolType in tools
+          li
+
+            ul
+              lh= toolType.name
+              for tool in toolType.list
+                li
+                  +name-and-level(tool)

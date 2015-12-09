@@ -1,127 +1,60 @@
 extends ../layout
 
+mixin bracketed (content, separator-before, separator-after)
+  span.link-color= separator-before + "(" + content + ")"
+  if separator
+    | #{separator}
+
+mixin name-and-level(item)
+  span.name= item.name
+  span(class= 'level ' + item.level)= item.level
+
+
+mixin image-or-span(item)
+  if item.img
+    img(
+      src= item.img
+      alt= item.name
+    )
+  else
+    span= item.name
+
+mixin link-or-image-or-span(item)
+  if item.href
+    a(href= item.href)
+      +image-or-span(item)
+  else
+    +image-or-span(item)
+
+mixin group(a)
+  li
+   header
+     h5
+       a(
+         href= a.href
+         target= a.target
+       )= title
+   .content
+     a(
+       href= a.href
+       target= a.target
+     )
+       img(
+         src= a.img
+         alt= a.title
+       )
+     .description= a.description
+
 block title
   title Jascha Ehrenreich, Magically Shifting Paradigms
 
 block content
-  section.affiliations.list
-    h2 Organizations
+  include ../inc/index/about
 
-    .disclaimer
-      | Groups i am proud to be a part of.
-    ul
-      li
-        header
-          h5
-            a(
-              href='http://bwb.is'
-              target='bwb'
-            ) Bitcoiners Without Borders
-        .content
-          a(
-            href='https://bwb.is'
-            target='bwb'
-          )
-            img(
-              src='/img/bwb.png'
-              alt='Bitcoiners Without Borders'
-            )
-          .description
-            | BitcoinersWithoutBorders is a group of individuals tired of the destructive trip,
-            | workin' on a better day.
+  include ../inc/index/skills
 
-      li
-        header
-          h5
-            a(
-              href='https://metalab.at'
-              target='utopia'
-            ) Metalab
+  include ../inc/index/clients
 
-        .content
-          a(
-            href='https://metalab.at'
-            target='utopia'
-          )
-            img(
-              src='/img/metalab.png'
-              alt='metalab.at'
-            )
-          .description
-            | The Metalab is
-            s the
-            |  a
-            a(
-              href='http://hackerspaces.org/wiki/'
-            ) hackspace
-            |  in
-            span(
-            ) Vienna, Austria.
-            |  Chances are high that i am sitting in the
-            span Metalab lounge
-            |  at this moment,
-            | which means that i am at the exact position of the orange dot you can see on
-            a(
-              href='http://www.openstreetmap.org/node/254344537'
-              target='utopia'
-            ) Openstreetmap
-      li
-        header
-          h5
-            a(
-              href='https://wizardsat.work'
-              target='utopia'
-            ) Wizards@Work
+  include ../inc/index/groups
 
-        .content
-          a(
-            href='https://wizardsat.work'
-            target='utopia'
-          )
-            img(
-              src='/img/wizardsatwork.png'
-              alt='wizardsat.work'
-            )
-          .description
-            | Wizards@Work is a tribe of scientists, hackers, engineers, programmers, and other maniacs.
-            | We are magically shifting paradigms.
-
-
-  section.social-networks.list
-    header Networks:
-    ul
-      li
-        a(
-          target='_blank'
-          href='https://github.com/jaeh'
-        ) github
-
-      li
-        a(
-          target='_blank'
-          href='https://keybase.io/jascha'
-        ) keybase
-
-      li
-        a(
-          target='_blank'
-          href='https://twitter.com/weirdpress'
-        ) twitter
-
-      li
-        a(
-          target='_blank'
-          href='https://about.me/jascha.ehrenreich'
-        ) about.me
-
-      li
-        a(
-          target='_blank'
-          href='https://suppe.jaeh.at'
-        ) soup.io
-
-      li
-        a(
-          target='_blank'
-          href='https://facebook.com/jascha.ehrenreich'
-        ) facebook
+  include ../inc/index/contact

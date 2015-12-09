@@ -1,5 +1,17 @@
+-
+  var menuItems = [
+    {href: '#♥', text: 'about', title:'Who i am'},
+    {href: '#skills', text: 'skills', title: 'What i can do'},
+    {href: '#clients', text: 'clients', title: 'Whom i did stuff for'},
+    {href: '#groups', text: 'groups', title: 'My Affiliations'},
+    {href: '#contact', text: 'contact', title: 'How i can be reached out to'},
+  ];
+
 nav
   ul
     for item in menuItems
       li
-        a(href=item.href title=item.title)= item.text
+        a(
+          href=item.href
+          title=item.title
+        )= item.text

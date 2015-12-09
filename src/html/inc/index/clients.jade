@@ -1,0 +1,70 @@
+-
+  var clients = [
+    {
+      title: 'games',
+      list: [
+        {
+          name: 'jowood',
+          branch: 'game publishing',
+          href: 'https://en.wikipedia.org/wiki/JoWooD_Entertainment',
+          timeframe: '2001-2003',
+          description: 'Worked on the failed game "The Last Chariot of the Gods" as a subcontractor.',
+        },
+        {
+          name: 'homegrowngames',
+          branch: 'indie game dev studio',
+          description: 'employed in a subcontract to jowood',
+        },
+        {
+          name: 'combinearts',
+          branch: 'design agency / indie game dev studio',
+          timeframe: '2002-2005',
+          description: 'Employee, flash, 3d and 2d games for clients, responsible for web properties both inhouse and for clients.',
+        },
+      ],
+    },
+    {
+      title: 'full stack web development',
+      list: [
+        {
+          name: 'bitcoin foundation',
+          href: 'https://bitcoinfoundation.org',
+          branch: 'non profit bitcoin advocacy group',
+          job: 'freelancer',
+          timeframe: '2013-2014',
+          description: '11 months of full stack development, the web properties worked when i left, i swear.'
+        },
+        {
+          name: 'wiener privatklinik',
+          branch: 'private hospital',
+          job: 'freelancer',
+          timeframe: '2007',
+          href: 'http://wiener-privatklinik.com/en/',
+          description: 'deployed wordpress and built a custom theme',
+        },
+        {
+          name: 'ttip-stoppen.at',
+          branch: 'ngo',
+          job: 'quick repair',
+          timeframe: '2015',
+          description: 'Spent around 2 hours fixing some of the css and getting some html content right.'
+        },
+      ],
+    },
+  ];
+
+
+if clients
+  section#clients.list
+    h2 clients
+    .disclaimer
+      | incomplete list of clients i worked for as a freelancer, contractor or employee between 2001 and 2015:
+
+    for clientType in clients
+      ul
+        lh= clientType.title
+
+        for client in clientType.list
+          +link-or-image-or-span(client)
+          if client.description
+            description= client.description

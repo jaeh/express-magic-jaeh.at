@@ -1,0 +1,48 @@
+-
+  var networks = [
+    {
+      href: 'https://keybase.io/jascha',
+      name: 'keybase',
+    },
+    {
+      href: 'https://twitter.com/weirdpress',
+      name: 'twitter',
+    },
+    {
+      href: 'https://about.me/jascha.ehrenreich',
+      name: 'about.me',
+    },
+    {
+      href: 'https://suppe.jaeh.at',
+      name: 'soup.io',
+    },
+    {
+      href: 'https://facebook.com/jascha.ehrenreich',
+      name: 'facebook',
+    },
+  ];
+
+  var emails = ['any-string@jaeh.at', 'j@bwb.is', 'jascha@magicshifter.net'];
+  var jabber = 'jascha@jabber.metalab.at';
+
+if networks || emails
+  section#contact
+    h2 Contact
+    if networks
+      header Networks:
+      ul
+        for network in networks
+          li
+            a(
+              target= '_blank'
+              href= network.href
+            )= network.name
+
+    if emails
+      header Email:
+      ul
+        for email in emails
+          li
+            a(
+              href='mailto://' + email
+            )= email
