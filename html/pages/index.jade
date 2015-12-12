@@ -1,60 +1,23 @@
 extends ../layout
 
-mixin bracketed (content, separator-before, separator-after)
-  span.link-color= separator-before + "(" + content + ")"
-  if separator
-    | #{separator}
-
-mixin name-and-level(item)
-  span.name= item.name
-  span(class= 'level ' + item.level)= item.level
-
-
-mixin image-or-span(item)
-  if item.img
-    img(
-      src= item.img
-      alt= item.name
-    )
-  else
-    span= item.name
-
-mixin link-or-image-or-span(item)
-  if item.href
-    a(href= item.href)
-      +image-or-span(item)
-  else
-    +image-or-span(item)
-
-mixin group(a)
-  li
-   header
-     h5
-       a(
-         href= a.href
-         target= a.target
-       )= title
-   .content
-     a(
-       href= a.href
-       target= a.target
-     )
-       img(
-         src= a.img
-         alt= a.title
-       )
-     .description= a.description
-
 block title
   title Jascha Ehrenreich, Magically Shifting Paradigms
 
 block content
-  include ../inc/index/about
+  section#about
+    div.image-container
+      img.face(src='/img/jascha.ehrenreich.jpg' alt='Jascha Ehrenreich')
+      img.body(src='/img/jascha.ehrenreich.body.jpg' alt='Jascha Ehrenreich')
+    div.text-container
+      h1 Jascha Ehrenreich
 
-  //- include ../inc/index/skills
+      h2 Developer / Engineer / Hacker / Streetartist
 
-  //- include ../inc/index/clients
+      div.description
+        p i juggle with code since thirteen,
+        p with cones, balls and rings since twentythree
+        p and life juggles with me since around thirtythree years.
+        p i enjoy all of it.
 
-  //- include ../inc/index/groups
-
-  //- include ../inc/index/contact
+     div.contact
+      a(href="mailto://via.jaeh.at@jaeh.at") any-string@jaeh.at
