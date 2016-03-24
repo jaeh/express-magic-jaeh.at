@@ -3,9 +3,11 @@ extends ../layout
 block content
   section.error404
     div.content
-      img(src='/img/404.png')
+      img(alt='Page Not Found' src='/img/404.png')
       h2 Four Oh Four. Not found.
-      | This should not have happened.
-      | You can try the 
-      a(href='/') home page
-      |  to see if it helps you.
+
+      p
+        | This should not have happened.
+        | You can try the
+        a(href='/') home page
+        |  to see if it helps you.
