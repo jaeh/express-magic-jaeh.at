@@ -22,6 +22,7 @@
     "document": false,
     "navigator": false,
     "window": false,
+    "localStorage": true,
     "__DEV__"      : false,
     "__PROD__"     : false,
     "__DEBUG__"    : false,
