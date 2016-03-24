@@ -2,24 +2,14 @@ global-reset()
 
 @import daynight
 
-@font-face
-  font-family 'Ubuntu'
-  font-style normal
-  font-weight 400
-  src local('Ubuntu'), url(/font/ubuntu-monospace-ext.woff2) format('woff2')
-  unicode-range U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF
-
-@font-face
-  font-family 'Ubuntu'
-  font-style normal
-  font-weight 400
-  src local('Ubuntu'), url(/font/ubuntu-monospace.woff2) format('woff2')
-  unicode-range U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
-
 body_color = #fefefe
 body_bg_color = #010101
 a_color = #F79F3F
 a_color_hover = #FF8500
+
+testimonial-shadow-color = #999
+testimonial-text-color = body_color
+testimonial-bg-color = #ff9d1c
 
 /* sanity */
 html, body, div, span, applet, object, iframe,
@@ -48,7 +38,7 @@ body
 
 body
   background-color body_bg_color
-  font-family Ubuntu, monospace
+  font-family Ubuntu, 'Lucida Grande', 'Segoe UI', monospace
   font-size 14px
   line-height 1.3em
   padding 0 1em .5em
@@ -59,7 +49,7 @@ body
     margin 0 auto 3em
     max-width 900px
     transition color .5s
-      
+
     section
       display inline-block
       max-width 100%
@@ -70,7 +60,7 @@ body
 
   &.day
     background-color body_color
-    
+
     pre.highlight
       border-color lighten(body_bg_color, 20%)
       background-color body_bg_color
@@ -96,7 +86,7 @@ a
 h1, h2, h3, h4, h5
   margin 1em 0 0
 
-h1 
+h1
   font-size 1.5em
   margin 1.5em 0 .5em
 h2
@@ -142,7 +132,7 @@ header.content
         &:hover
           opacity 1
 
-  
+
   h1
     font-size 1.5em
     margin .5em 0
@@ -197,7 +187,7 @@ div.social
   li
     margin 0 1% 1%
     width 12%
-    
+
     img
       width 100%
 
@@ -261,10 +251,10 @@ code, samp, kbd
 
 
 .testimonial
-  background-color #ff9d1c
+  background-color testimonial-bg-color
   border-radius 9px
-  box-shadow 2px 3px 10px #999
-  color #fff
+  box-shadow 2px 3px 10px testimonial-shadow-color
+  color testimonial-text-color
   margin 1em auto
   padding .5em
   text-align center
@@ -310,8 +300,8 @@ header.main
   body
     font-size 17px
   section.author
-    div.affiliations 
-      li 
+    div.affiliations
+      li
         header,
         .content
           width 100%
@@ -345,7 +335,7 @@ header.main
   body
     font-size 15px
     text-align center
-    
+
     header.content
       h1,
       div,
@@ -379,7 +369,7 @@ header.main
         display inline
         margin 0
         padding 0 4% 0
-        
+
         &:first-child
           border-right 1px solid a_color
 
