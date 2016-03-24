@@ -21,17 +21,17 @@ html(lang='en')
       div!= adminMenu
 
     header.main
-      include ./menu
+      include ./menu.pug
 
     #wrapper
-      include ./header
+      include ./header.pug
 
       block content
         div.content empty body content
       block aside
 
     footer.main
-      include ./menu
+      include ./menu.pug
 
     block scripts
 
