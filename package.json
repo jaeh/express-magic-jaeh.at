@@ -1,6 +1,20 @@
 {
-  "name"   : "jaeh.at",
-  "version": "0.0.2",
-  "private": true,
-  "main"   : "./H.js"
+  "name": "jaeh.at",
+  "version": "0.23.5",
+  "author": "Jascha Ehrenreich <jascha@jaeh.at>",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "magic-root": "git://github.com/magic/root"
+  },
+  "contributors": [
+    {
+      "name": "jascha ehrenreich",
+      "email": "jascha@magicshifter.net",
+      "github": "jaeh"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaeh/jaeh.at.git"
+  }
 }
