@@ -8,5 +8,4 @@ export CONTAINER_NAME=jaeh-at
 # export NODEJS_SRC_FILES=src/config.js src/index.js
 # export NODEJS_OUT_FILE=out/index.js
 
-
 include node_modules/magic-root/bin/Makefile
