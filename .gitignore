@@ -1,9 +1,10 @@
-*.css
-node_modules
 *.sublime-project
 *.sublime-workspace
+node_modules
 .DS_Store
 npm-debug.log
 dist
 out
-IP.txt
+*.css
+SERVER_IP
+
