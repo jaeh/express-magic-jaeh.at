@@ -11,7 +11,6 @@ WORKDIR /srv
 COPY package.json ./
 
 ARG NODE_ENV
-ARG CACHEBUST
 
 ENV NODE_ENV=production
 
@@ -20,8 +19,10 @@ RUN npm install --verbose --production
 COPY src ./src/
 COPY .babelrc ./
 
-RUN cp node_modules/magic-root/bin/cli.sh .
+ENV DIST_DIR=dist/
+ENV SERVER_SRC_FILES=src/server
+ENV CLIENT_SRC_FILES=src/client
 
-RUN ./cli.sh build-src
+RUN ./build.sh
 
 CMD ["node", "dist/index.js"]
