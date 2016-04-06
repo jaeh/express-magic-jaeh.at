@@ -36,7 +36,7 @@ CLI:=./cli.sh
 
 # TASKS
 
-all: help
+all: dev
 
 dev:
 	${CLI} $@
