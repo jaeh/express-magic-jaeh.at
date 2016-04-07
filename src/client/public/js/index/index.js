@@ -1,1 +1,2 @@
+import './bodyClass';
 import './dayNight';

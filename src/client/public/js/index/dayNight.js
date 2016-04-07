@@ -9,14 +9,16 @@ const button = document.createElement('a');
 const body = document.body;
 const wrapper = document.getElementById('wrapper');
 
-let timeString = localStore('bodyClass') || 'day';
-const date = new Date();
-const hours = date.getHours();
+body.className = body.className
+  .replace('day', '')
+  .replace('night', '')
+  .trim();
 
-body.className.replace('day', '');
-body.className.replace('night', '');
-
+let timeString = localStore('bodyClass');
 if (!timeString) {
+  const date = new Date();
+  const hours = date.getHours();
+
   timeString =
     hours > 19 || hours < 7
     ? 'night'
