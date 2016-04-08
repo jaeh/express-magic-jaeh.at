@@ -1,0 +1,53 @@
+-
+  groups = {
+    title: 'Organizations',
+    description: 'Groups i am proud to be a part of.',
+    list: [
+      {
+        href: 'https://bwb.is',
+        target: 'bwb',
+        img: 'bwb.png',
+        title: 'Bitcoiners Without Borders',
+        description: 'We are a tribe of individuals tired of the destructive trip, working on a better day.',
+      },
+      {
+        href: 'https://wiznwit.com',
+        target: 'wiznwit',
+        img: 'wiznwit.png',
+        title: 'Wizards & Witches',
+        description: 'Our team of contributors at Wizards @ Work. Magically shifting paradigms.',
+      },
+      {
+        href: 'https://metalab.at',
+        target: 'metalab',
+        img: 'metalab.png',
+        title: 'Metalab',
+        description: 'The Metalab is a hackspace in vienna, austria.',
+      },
+    ],
+  }
+
+section#groups
+  .affiliations.list
+    h2= groups.title
+    .disclaimer=groups.description
+
+    ul
+      for group in groups.list
+        li
+          header
+            h5
+              a(
+                href=group.href
+                target=group.target
+              )= group.title
+          .content
+            a(
+              href=group.href
+              target=group.target
+            )
+              img(
+                src='/img/' + group.img
+                alt=group.title
+              )
+            .description=group.description

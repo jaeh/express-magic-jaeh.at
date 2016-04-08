@@ -1,15 +1,9 @@
 global-reset()
 
-@import daynight
-
-body_color = #fefefe
-body_bg_color = #010101
-a_color = #F79F3F
-a_color_hover = #FF8500
-
-testimonial-shadow-color = #999
-testimonial-text-color = body_color
-testimonial-bg-color = #ff9d1c
+$body-color = #010101
+$body-bg-color = #fefefe
+$a-color = #F79F3F
+$a-color-hover = #FF8500
 
 /* sanity */
 *, *:before, *:after
@@ -25,357 +19,85 @@ body
   width 100%
 
 body
-  background-color body_bg_color
+  background-color $body-bg-color
   font-family Ubuntu, 'Lucida Grande', 'Segoe UI', monospace
-  font-size 14px
-  line-height 1.3em
-  padding 0 1em .5em
-  transition background-color .5s
+  font-size 13px
+  line-height 1.5em
 
-  #wrapper
-    color body_color
-    margin 0 auto 3em
-    max-width 900px
-    transition color .5s
-
-    section
-      display inline-block
-      max-width 100%
-    .post
-      float left
-    aside
-      float right
-
-  &.day
-    background-color body_color
-
-    pre.highlight
-      border-color lighten(body_bg_color, 20%)
-      background-color body_bg_color
-      code
-        color body_color
-    #wrapper
-      color body_bg_color
-    a
-      color a_color
-      &:hover
-        color a_color_hover
-
-h1, h2, h3, h4, h5
-  color a_color
+  &.js
+    transition background-color .5s
 
 a
-  color a_color
-  text-decoration none
+  color $a-color
 
-  &:hover
-    color a_color_hover
+  &:hover,
+  &:active
+    $a-color-hover
 
-h1, h2, h3, h4, h5
-  margin 1em 0 0
-
-h1
-  font-size 1.5em
-  margin 1.5em 0 .5em
 h2
-  font-size 1.4em
-  margin 1.5em 0 .5em
-h3
-  font-size 1.3em
-h4
   font-size 1.2em
-h5
-  font-size 1.1em
 
-p
-  margin .2em 0
-
-header.content
-  display inline-block
-  margin 3em 0 .5em
-  width 100%
-
-  > div
-      float left
-      width 57%
-
-  div.image-container
-    float left
-    max-width 235px
-    width 30%
-    position relative
-    margin 0 3% 0 0
-
-    img
-      border-radius 100%
-      float left
-      width 100%
-
-      &.body
-        opacity 0
-        transition opacity 0.8s
-        position absolute
-        left 0
-
-        &:hover
-          opacity 1
-
-
-  h1
-    font-size 1.5em
-    margin .5em 0
-
-  div.jobTitle
-    font-size .9em
-    margin 0 0 .5em
-
-
-section.author
-  margin 0 auto
-  max-width 1000px
-  width 94%
-
-section.error404
-  img
-    max-width 40%
-    float left
-
-div.list
-  display inline-block
-
-  li
-    display inline-block
-    margin 1em 0
-    width 100%
-
-    h5
-      margin 0 0 .5em
-      width 100%
-
-      a
-        img
-          display inline
-          float left
-          margin 0 3% 0 0
-
-    .content
-      float left
-      img
-        float left
-        margin 0 3% 3% 0
-        max-width 60px
-
-    div.description
-      display inline
-
-.disclaimer
-  font-size .9em
-
-div.social
-  li
-    margin 0 1% 1%
-    width 12%
-
-    img
-      width 100%
-
-  div.emails, div.networks
-    float left
-    margin 1em 0
-
-div.emails
-  width 35%
-
-  li
-    display block
-
-  a
-    line-height 1.4
-
-div.networks
-  text-align right
-  width 65%
-
-  header
-    clear both
-    display block
-    margin 0 0 .1em
-
-    li
-      display inline
-
-      img
-        width 12%
-        margin 0 1%
-        opacity .8
-        &:hover
-          opacity 1
-
-pre.highlight
-  border-left 11px solid lighten(body_bg_color, 20%)
-  margin 1.7em 0 1.7em .3em
-  overflow auto
-  padding .1em .5em .3em .7em
-  width 93%
-  background-color body_color
-  transition background-color .5s
-  text-align left
-
-  code
-    line-height 1.6em
-
-code, samp, kbd
-  color lighten(body_bg_color, 20%)
-  font-family "Courier New", Courier, monospace, sans-serif
-  text-align left
-  transition color .5s
-
-.dirview
-  ul
-    ul
-      margin 0 1em
-
-
-.testimonial
-  background-color testimonial-bg-color
-  border-radius 9px
-  box-shadow 2px 3px 10px testimonial-shadow-color
-  color testimonial-text-color
-  margin 1em auto
-  padding .5em
+nav.main
+  background $body-bg-color
+  background linear-gradient($body-bg-color, rgba(255,255,255,0))
+  font-size .8em
+  padding 0 0 1em
+  position fixed
   text-align center
-  width 80%
+  width 100vw
+  z-index 1
 
-  p
-    font-size .7em
-    font-style italic
-    text-align right
-    line-height 1.3em
-    margin 0
-
-.noselect
-  user-select none
-
-footer.main
-  bottom 0
-  left 0
-  position absolute
-  top auto
-
-header.main
-  position relative
-
-footer.main,
-header.main
-  display inline-block
-  margin 0
-  text-align center
-  width 100%
-
-  nav ul li
-    border-right 1px solid a_color
+  li
     display inline
-    padding 0 .5em
-    &:first-child
-      border-left 1px solid a_color
+    margin 0 .2em 0
 
-#je-suis-chelsea
+section
+  height 100vh
   text-align center
+  width 100vw
 
-@media (max-width: 800px)
-  body
-    font-size 17px
-  section.author
-    div.affiliations
-      li
-        header,
-        .content
-          width 100%
+  &#hero
+    .image-container
+      position relative
 
-@media (max-width: 600px)
-  body
-    font-size 16px
-
-    header.content
-      h1,
-      div
-        width 45%
-      div.image-container
-        max-width 300px
-        width 50%
-
-@media (max-width: 500px)
-  body
-    font-size 15px
-
-  header.content
-    div.description
-      margin 1em 0
-
-  section.author
-    div.email,
-    div.networks
-      width 100%
-
-@media (max-width: 420px)
-  body
-    font-size 15px
-    text-align center
-
-    header.content
-      h1,
-      div,
-      div.description,
-      img,
-      div.image-container
-        width 100%
-        max-width 100%
-
-    div.list
-      li
-        .content
-          img
-            max-width 100%
-            width 30%
-            float none
-        div.description
-          display block
-
-    div.networks
-      ul
-        text-align center
-
-        li
-          width 19%
-
-    div.emails
-      width 100%
-      float none
-      li
-        display inline
-        margin 0
-        padding 0 4% 0
+      img
+        border-radius 100%
+        left 0
+        position absolute
+        transition opacity .5s
 
         &:first-child
-          border-right 1px solid a_color
+          opacity 1
+        &:last-child
+          opacity 0
 
-    div.networks
+      &:hover
+        img
+          &:first-child
+            opacity 0
+          &:last-child
+            opacity 1
+
+    .text-container
       text-align center
 
-    section.author
-      div.networks
-        clear both
-        margin 0 0 1em
-        max-width 100%
-        width 100%
+      h1
+        font-size 1.2em
 
-        header
-          margin 1em 0 .1em
-      h2
-        display inherit
-        width 65%
+      .jobTitle
+        font-size .9em
+        font-style italic
 
-    section.error404
-      img
-        max-width 100%
-        width 100%
+
+@media (orientation: portrait)
+  section
+    &#hero
+      .image-container
+        width 70vw
+        height 70vw
+        margin 10vw auto
+        display block
+
+        img
+          width 70vw
+          height 70vw
