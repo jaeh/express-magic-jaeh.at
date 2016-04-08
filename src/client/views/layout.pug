@@ -16,22 +16,19 @@ html(lang='en')
 
     block styles
 
-  body.day
+  body
     if adminMenu
       div!= adminMenu
 
-    header.main
-      include ./menu.pug
+    include ./menu.pug
 
-    #wrapper
-      include ./header.pug
+    div#wrapper
+      block header
+        header.main
 
       block content
         div.content empty body content
       block aside
-
-    footer.main
-      include ./menu.pug
 
     block scripts
 
