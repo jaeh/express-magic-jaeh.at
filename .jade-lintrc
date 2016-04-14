@@ -10,7 +10,7 @@
   "disallowImplicitDiv": null,
   "disallowMultipleLineBreaks": null,
   "disallowSpaceAfterCodeOperator": null,
-  "disallowSpacesInsideAttributeBrackets": true,
+  "disallowSpacesInsideAttributeBrackets": false,
   "disallowSpecificAttributes": null,
   "disallowSpecificTags": null,
   "disallowStringConcatenation": true,
