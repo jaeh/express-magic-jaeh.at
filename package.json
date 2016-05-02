@@ -4,7 +4,8 @@
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
   "license": "AGPL-3.0",
   "devDependencies": {
-    "magic-root": "git://github.com/magic/root"
+    "magic-dev": "github:magic/dev",
+    "magic-root": "github:magic/root"
   },
   "contributors": [
     {
